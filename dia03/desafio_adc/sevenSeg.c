@@ -1,6 +1,6 @@
 /*
  * File:   sevenSeg.c
- * Author: root
+ * Author: Fellipe
  *
  * Created on July 15, 2019, 3:42 PM
  */
@@ -13,7 +13,7 @@
 void printDigit1(unsigned char valor){
     output_highA(PIN_A5);
     output_lowA(PIN_A2);
-    output_lowE(PIN_E0|PIN_E1);
+    output_lowE(PIN_E0|PIN_E2);
     LATD=tabela[valor];
    
 }
@@ -38,4 +38,32 @@ void printDigit4(unsigned char valor){
 void configSevenSeg(void){
     setOutputA(PIN_A5|PIN_A2);
     setOutputE(PIN_E0|PIN_E2);
+}
+void printDisplays(unsigned int valor){
+        if(valor<10){
+            printDigit1((unsigned char)valor);
+        }
+        else if(valor>=10 && valor<100){
+            printDigit1((unsigned char)(valor%10));
+            __delay_ms(5);
+            printDigit2((unsigned char)(valor/10));
+        }
+        else if(valor>=100 && valor <1000){
+            printDigit1((unsigned char)((valor%100)%10));
+            __delay_ms(5);
+            printDigit2((unsigned char)((valor%100)/10));
+            __delay_ms(5);
+            printDigit3((unsigned char)((valor/100)));
+        }
+        else if(valor>=1000){
+            printDigit1((unsigned char)(((valor%1000)%100)%10));
+            __delay_ms(5);
+            printDigit2((unsigned char)(((valor%1000)%100)/10));
+            __delay_ms(5);
+            printDigit3((unsigned char)(((valor%1000)/100)));
+            __delay_ms(5);
+            printDigit4((unsigned char)(valor/1000));
+            
+            
+        }
 }

@@ -11,6 +11,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+#ifndef _XTAL_FREQ
+#define _XTAL_FREQ 8000000
+#endif
 const char tabela[] = {
 						0x3F,	// número 0
 						0x06,	// número 1
@@ -28,6 +31,7 @@ void printDigit1(unsigned char valor);
 void printDigit2(unsigned char valor);
 void printDigit3(unsigned char valor);
 void printDigit4(unsigned char valor);
+void printDisplays(unsigned int valor);
 
 
 #ifdef	__cplusplus
