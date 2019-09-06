@@ -8,3 +8,5 @@ Apresentação dos ambientes de programação e exemplos de aplicações em Asse
 Desenvolvimento de aplicações utilizando Timer
 ## [Dia 03](https://github.com/fellipe-leandro/minicurso-pic/tree/master/dia03)
 Desenvolvimento de aplicações utilizando o ADC e o Módulo CCP
+## [Dia 04](https://github.com/fellipe-leandro/minicurso-pic/tree/master/dia04)
+Desenvolvimeno de aplicações utilizando comunicação Serial - UART e I2C
